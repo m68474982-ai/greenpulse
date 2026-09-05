@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     port: 5173,
     host: '0.0.0.0',
-    allowedHosts: ['sb-7jxjry1ehu90.vercel.run'],
+    allowedHosts: ['.vercel.run'],
     proxy: {
       '/api': {
         target: 'http://localhost:8000',
