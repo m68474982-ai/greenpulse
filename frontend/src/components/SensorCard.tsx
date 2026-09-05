@@ -10,7 +10,7 @@ import {
   ArrowUpRight,
   Sparkles
 } from 'lucide-react';
-import { Sensor, SensorStatus } from '../types';
+import { Sensor, SensorReading, SensorStatus } from '../types';
 
 interface SensorCardProps {
   sensor: Sensor;
@@ -18,7 +18,7 @@ interface SensorCardProps {
 }
 
 export const SensorCard: React.FC<SensorCardProps> = ({ sensor, onClick }) => {
-  const reading = sensor.latest_reading || {};
+  const reading: Partial<SensorReading> = sensor.latest_reading ?? {};
 
   const statusConfig: Record<SensorStatus, { label: string; bg: string; text: string; border: string; dot: string }> = {
     normal: {
